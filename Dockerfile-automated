@@ -13,3 +13,5 @@ RUN apk -U upgrade \
     && apk add \
         nginx-mod-http-dav-ext=${NGINX_VERSION} \
     && rm -rf /var/cache/apk/* /www/* /tmp/*
+
+COPY ./overlay /
