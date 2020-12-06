@@ -1,19 +1,22 @@
 server {
     listen                              80;
     listen                              [::]:80;
-    root                                /www;
 
-    autoindex                           on;
+    location / {
+        root                            /www;
 
-    dav_methods                         PUT DELETE MKCOL COPY MOVE;
-    dav_ext_methods                     PROPFIND OPTIONS;
-    dav_access                          all:rw;
+        autoindex                       on;
 
-    client_max_body_size                0;
-    client_body_temp_path               /tmp;
+        dav_methods                     PUT DELETE MKCOL COPY MOVE;
+        dav_ext_methods                 PROPFIND OPTIONS;
+        dav_access                      all:rw;
 
-    create_full_put_path                on;
+        client_max_body_size            0;
+        client_body_temp_path           /tmp;
 
-    proxy_max_temp_file_size            0;
-    proxy_buffering                     off;
+        create_full_put_path            on;
+
+        proxy_max_temp_file_size        0;
+        proxy_buffering                 off;
+    }
 }
