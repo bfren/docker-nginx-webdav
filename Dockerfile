@@ -7,8 +7,8 @@ LABEL maintainer="Ben Green <ben@bcgdesign.com>" \
     org.label-schema.vendor="Ben Green" \
     org.label-schema.schema-version="1.0"
 
+ARG NGINX_VERSION
 
-COPY ./VERSION /tmp/VERSION
 RUN apk -U upgrade \
     && apk add \
         nginx-mod-http-dav-ext=${NGINX_VERSION} \
