@@ -7,9 +7,9 @@ server {
 
         autoindex                       on;
 
-        dav_methods                     PUT DELETE MKCOL COPY MOVE;
+        dav_access                      all:{{ getenv "DAV_ACCESS" }};
+        dav_methods                     {{ getenv "DAV_METHODS" }};
         dav_ext_methods                 PROPFIND OPTIONS;
-        dav_access                      all:rw;
 
         client_body_temp_path           /tmp;
 

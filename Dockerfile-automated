@@ -9,6 +9,12 @@ LABEL maintainer="Ben Green <ben@bcgdesign.com>" \
 
 ARG NGINX_VERSION
 
+ENV \
+    # set to "r" or "rw" to enable read-only / read-write access
+    DAV_ACCESS="r" \
+    # set to "PUT DELETE MKCOL COPY MOVE" (or any variation) to enable full write access
+    DAV_METHODS="off"
+
 RUN apk -U upgrade \
     && apk add \
         nginx-mod-http-dav-ext=${NGINX_VERSION} \

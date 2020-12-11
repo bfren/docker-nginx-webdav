@@ -1,0 +1,7 @@
+#!/usr/bin/with-contenv bash
+
+_echo "Writing Nginx WebDAV config..."
+gomplate \
+    -o /etc/nginx/sites/localhost \
+    -f /etc/templates/localhost.conf.tmpl
+_done

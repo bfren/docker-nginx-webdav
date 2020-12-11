@@ -6,9 +6,18 @@
 
 Very Simple WebDAV server - serves files mounted in `/www`.  There is **no** authentication, so this should be used behind a reverse proxy, and local only, unless you know what you are doing.
 
+By default files are served read-only - change two environment variables to enable full write access as well.
+
 ## Ports
 
 * 80 (from base image)
+
+## Environment Variables
+
+```bash
+DAV_ACCESS="r"     # set to "rw" to enable read-write access
+DAV_METHODS="off"  # set to "PUT DELETE MKCOL COPY MOVE" (or any variation) to enable full write access
+```
 
 ## Authors
 
