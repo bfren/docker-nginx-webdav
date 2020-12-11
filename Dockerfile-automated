@@ -17,6 +17,7 @@ ENV \
 
 RUN apk -U upgrade \
     && apk add \
+        gomplate \
         nginx-mod-http-dav-ext=${NGINX_VERSION} \
     && rm -rf /var/cache/apk/* /www/* /tmp/*
 
