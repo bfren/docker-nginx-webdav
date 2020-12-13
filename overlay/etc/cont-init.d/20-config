@@ -1,5 +1,7 @@
 #!/usr/bin/with-contenv sh
 
+set -euo pipefail
+
 _echo "Writing Nginx WebDAV config..."
 gomplate \
     -o /etc/nginx/sites/localhost \
