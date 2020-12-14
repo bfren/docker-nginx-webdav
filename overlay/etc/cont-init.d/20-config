@@ -2,6 +2,11 @@
 
 set -euo pipefail
 
+
+#======================================================================================================================
+# Config is re-written every time in case environment variables have been changed
+#======================================================================================================================
+
 _echo "Writing Nginx WebDAV config..."
 gomplate \
     -o /etc/nginx/sites/localhost \
