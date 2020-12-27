@@ -1,11 +1,12 @@
-name: build
+name: build-main
 
 on:
   push:
     branches: main
-    paths-ignore:
-      - '*.code-workspace'
-      - 'README.md'
+    paths:
+      - '.github/workflows/build-main.yml'
+      - 'overlay/**'
+      - 'VERSION'
 
 jobs:
   main:
