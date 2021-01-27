@@ -1,4 +1,4 @@
-ARG NGINX_VERSION=1.18.0-r1
+ARG NGINX_VERSION=1.1.0
 FROM bcgdesign/nginx:${NGINX_VERSION}
 
 LABEL maintainer="Ben Green <ben@bcgdesign.com>" \
