@@ -29,5 +29,5 @@ DAV_METHODS="off"  # set to "PUT DELETE MKCOL COPY MOVE" (or any variation) to e
 
 ## Copyright
 
-> Copyright (c) 2020 Ben Green <https://bcgdesign.com>  
+> Copyright (c) 2021 Ben Green <https://bcgdesign.com>  
 > Unless otherwise stated
