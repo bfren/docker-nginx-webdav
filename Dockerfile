@@ -1,5 +1,5 @@
 ARG NGINX_VERSION=1.18.0-r1
-FROM bcgdesign/nginx:${NGINX_VERSION}
+FROM bcgdesign/nginx:nginx-${NGINX_VERSION}
 
 LABEL maintainer="Ben Green <ben@bcgdesign.com>" \
     org.label-schema.name="Nginx WebDAV" \

@@ -11,12 +11,6 @@ jobs:
         name: Checkout code
         uses: actions/checkout@v2
       -
-        name: Read version
-        uses: bencgreen/read-file-action@v1
-        with:
-          path: ./VERSION
-        id: version
-      -
         name: Set up QEMU
         uses: docker/setup-qemu-action@v1
       -
