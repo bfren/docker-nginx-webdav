@@ -2,9 +2,10 @@ name: build-main
 
 on:
   push:
-    branches: main
+    branches:
+      - 'main'
     tags-ignore:
-      - 'v*'
+      - '**'
     paths:
       - '.github/workflows/build-main.yml'
       - 'overlay/**'
