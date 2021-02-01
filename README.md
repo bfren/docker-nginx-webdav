@@ -8,16 +8,22 @@ Very Simple WebDAV server - serves files mounted in `/www`.  There is **no** aut
 
 By default files are served read-only - change two environment variables to enable full write access as well.
 
+## Contents
+
+* [Ports](#ports)
+* [Environment Variables](#environment-variables)
+* [Authors / Licence / Copyright](#authors)
+
 ## Ports
 
 * 80 (from base image)
 
 ## Environment Variables
 
-```bash
-DAV_ACCESS="r"     # set to "rw" to enable read-write access
-DAV_METHODS="off"  # set to "PUT DELETE MKCOL COPY MOVE" (or any variation) to enable full write access
-```
+| Variable      | Values      | Description                                                | Default |
+| ------------- | ----------- | ---------------------------------------------------------- | ------- |
+| `DAV_ACCESS`  | 'r' or 'rw' | Set to 'r' for read-only or 'rw' for read/write access.    | r       |
+| `DAV_METHODS` | string      | For full write access set to 'PUT DELETE MKCOL COPY MOVE'. | off     |
 
 ## Authors
 
