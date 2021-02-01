@@ -1,4 +1,4 @@
-ARG NGINX_VERSION=1.18.0-r1
+ARG NGINX_VERSION=1.18.0-r13
 FROM bcgdesign/nginx:auto
 
 LABEL maintainer="Ben Green <ben@bcgdesign.com>" \
@@ -15,9 +15,10 @@ ENV \
     # set to "PUT DELETE MKCOL COPY MOVE" (or any variation) to enable full write access
     DAV_METHODS="off"
 
+ARG GOMPLATE_VERSION=3.8.0-r0
 RUN apk -U upgrade \
     && apk add \
-        gomplate \
+        gomplate=${GOMPLATE_VERSION} \
         nginx-mod-http-dav-ext=${NGINX_VERSION} \
     && rm -rf /var/cache/apk/* /www/* /tmp/*
 
