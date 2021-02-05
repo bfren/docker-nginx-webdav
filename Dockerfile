@@ -1,4 +1,3 @@
-
 FROM bcgdesign/nginx:alpine-3.13-1.2.2
 
 LABEL maintainer="Ben Green <ben@bcgdesign.com>" \
