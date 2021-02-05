@@ -1,5 +1,5 @@
-ARG NGINX_VERSION=1.18.0-r13
-FROM bcgdesign/nginx:nginx-${NGINX_VERSION}
+
+FROM bcgdesign/nginx:alpine-3.13-1.2.2
 
 LABEL maintainer="Ben Green <ben@bcgdesign.com>" \
     org.label-schema.name="Nginx WebDAV" \
@@ -16,6 +16,7 @@ ENV \
     DAV_METHODS="off"
 
 ARG GOMPLATE_VERSION=3.8.0-r0
+ARG NGINX_VERSION=1.18.0-r13
 RUN apk -U upgrade \
     && apk add \
         gomplate=${GOMPLATE_VERSION} \
