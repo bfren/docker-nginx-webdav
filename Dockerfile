@@ -1,4 +1,4 @@
-FROM bcgdesign/nginx:alpine-3.13-1.2.2
+FROM bcgdesign/nginx:alpine-3.13-1.3.0
 
 LABEL maintainer="Ben Green <ben@bcgdesign.com>" \
     org.label-schema.name="Nginx WebDAV" \
