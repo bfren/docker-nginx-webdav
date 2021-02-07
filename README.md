@@ -35,5 +35,5 @@ By default files are served read-only - change two environment variables to enab
 
 ## Copyright
 
-> Copyright (c) 2021 Ben Green <https://bcgdesign.com>  
+> Copyright (c) 2021 Ben Green <https://bcgdesign.com>
 > Unless otherwise stated
