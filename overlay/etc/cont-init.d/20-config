@@ -9,6 +9,6 @@ set -euo pipefail
 
 _echo "Writing Nginx WebDAV config..."
 gomplate \
-    -o /etc/nginx/sites/localhos.conf \
+    -o /etc/nginx/sites/localhost.conf \
     -f /etc/templates/localhost.conf.tmpl
 _done
