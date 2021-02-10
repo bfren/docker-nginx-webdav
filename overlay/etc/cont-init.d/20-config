@@ -7,8 +7,7 @@ set -euo pipefail
 # Config is re-written every time in case environment variables have been changed
 #======================================================================================================================
 
-_echo "Writing Nginx WebDAV config..."
-gomplate \
-    -o /etc/nginx/sites/localhost.conf \
-    -f /etc/templates/localhost.conf.tmpl
-_done
+bcg-echo "Writing Nginx WebDAV config..."
+esh -o /etc/nginx/sites/localhost.conf \
+    /etc/templates/localhost.conf.esh
+bcg-done
