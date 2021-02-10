@@ -7,8 +7,8 @@ server {
 
         autoindex                       on;
 
-        dav_access                      all:{{ getenv "DAV_ACCESS" }};
-        dav_methods                     {{ getenv "DAV_METHODS" }};
+        dav_access                      all:<%= "${DAV_ACCESS}" %>;
+        dav_methods                     <%= "${DAV_METHODS}" %>;
         dav_ext_methods                 PROPFIND OPTIONS;
 
         client_body_temp_path           /tmp;
