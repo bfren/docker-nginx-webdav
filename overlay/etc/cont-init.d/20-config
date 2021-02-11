@@ -8,6 +8,6 @@ set -euo pipefail
 #======================================================================================================================
 
 bcg-echo "Writing Nginx WebDAV config..."
-esh -o /sites/localhost.conf \
+esh -o /var/nginx/sites/localhost.conf \
     /etc/templates/localhost.conf.esh
 bcg-done

@@ -2,22 +2,20 @@ server {
     listen                          80;
     listen                          [::]:80;
 
-    location / {
-        root                            /www;
+    root                            /www;
 
-        autoindex                       on;
+    autoindex                       on;
 
-        dav_access                      all:<%= "${DAV_ACCESS}" %>;
-        dav_methods                     <%= "${DAV_METHODS}" %>;
-        dav_ext_methods                 PROPFIND OPTIONS;
+    dav_access                      all:<%= "${DAV_ACCESS}" %>;
+    dav_methods                     <%= "${DAV_METHODS}" %>;
+    dav_ext_methods                 PROPFIND OPTIONS;
 
-        client_body_temp_path           /tmp;
+    client_body_temp_path           /tmp;
 
-        create_full_put_path            on;
+    create_full_put_path            on;
 
-        proxy_max_temp_file_size        0;
-        proxy_buffering                 off;
+    proxy_max_temp_file_size        0;
+    proxy_buffering                 off;
 
-        include                         helpers/nginx-uploads.conf;
-    }
+    include                         helpers/nginx-uploads.conf;
 }
