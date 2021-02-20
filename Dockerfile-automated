@@ -10,9 +10,9 @@ ARG NGINX_VERSION
 
 ENV \
     # set to "r" or "rw" to enable read-only / read-write access
-    DAV_ACCESS="r" \
+    WEBDAV_ACCESS="r" \
     # set to "PUT DELETE MKCOL COPY MOVE" (or any variation) to enable full write access
-    DAV_METHODS="off"
+    WEBDAV_METHODS="off"
 
 ARG NGINX_VERSION=1.18.0-r13
 RUN apk -U upgrade \
