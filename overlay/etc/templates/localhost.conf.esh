@@ -6,8 +6,8 @@ server {
 
     autoindex                       on;
 
-    WEBDAV_ACCESS                      all:<%= "${WEBDAV_ACCESS}" %>;
-    WEBDAV_METHODS                     <%= "${WEBDAV_METHODS}" %>;
+    dav_access                      all:<%= "${WEBDAV_ACCESS}" %>;
+    dav_methods                     <%= "${WEBDAV_METHODS}" %>;
     dav_ext_methods                 PROPFIND OPTIONS;
 
     client_body_temp_path           /tmp;
