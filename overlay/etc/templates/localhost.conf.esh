@@ -2,12 +2,12 @@ server {
     listen                          80;
     listen                          [::]:80;
 
-    root                            /www;
+    root                            <%= ${NGINX_WWW} %>;
 
     autoindex                       on;
 
-    dav_access                      all:<%= "${DAV_ACCESS}" %>;
-    dav_methods                     <%= "${DAV_METHODS}" %>;
+    WEBDAV_ACCESS                      all:<%= "${WEBDAV_ACCESS}" %>;
+    WEBDAV_METHODS                     <%= "${WEBDAV_METHODS}" %>;
     dav_ext_methods                 PROPFIND OPTIONS;
 
     client_body_temp_path           /tmp;
