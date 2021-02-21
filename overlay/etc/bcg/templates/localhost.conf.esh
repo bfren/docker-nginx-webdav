@@ -8,7 +8,7 @@ server {
 
     dav_access                      all:<%= "${WEBDAV_ACCESS}" %>;
     dav_methods                     <%= "${WEBDAV_METHODS}" %>;
-    dav_ext_methods                 PROPFIND OPTIONS;
+    dav_ext_methods                 <%= "${WEBDAV_EXT_METHODS}" %>;
 
     client_body_temp_path           /tmp;
 

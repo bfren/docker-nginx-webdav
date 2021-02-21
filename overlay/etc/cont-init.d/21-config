@@ -10,5 +10,5 @@ export BCG_E=`basename ${0}`
 
 bcg-echo "Writing Nginx WebDAV config..."
 esh -o ${NGINX_LOCALHOST_CONF} \
-    ${TEMPLATES}/localhost.conf.esh
+    ${BCG_WEBDAV_METHODS}/localhost.conf.esh
 bcg-done
