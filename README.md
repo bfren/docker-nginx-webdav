@@ -20,10 +20,10 @@ By default files are served read-only - change two environment variables to enab
 
 ## Environment Variables
 
-| Variable      | Values      | Description                                                | Default |
-| ------------- | ----------- | ---------------------------------------------------------- | ------- |
-| `DAV_ACCESS`  | 'r' or 'rw' | Set to 'r' for read-only or 'rw' for read/write access.    | r       |
-| `DAV_METHODS` | string      | For full write access set to 'PUT DELETE MKCOL COPY MOVE'. | off     |
+| Variable         | Values      | Description                                                | Default |
+| ---------------- | ----------- | ---------------------------------------------------------- | ------- |
+| `WEBDAV_ACCESS`  | 'r' or 'rw' | Set to 'r' for read-only or 'rw' for read/write access.    | r       |
+| `WEBDAV_METHODS` | string      | For full write access set to 'PUT DELETE MKCOL COPY MOVE'. | off     |
 
 ## Authors
 
