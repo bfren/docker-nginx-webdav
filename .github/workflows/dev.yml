@@ -1,26 +1,32 @@
-name: build-main
+name: dev
 
 on:
   push:
-    branches:
+    branches-ignore:
       - 'main'
     tags-ignore:
       - '**'
     paths:
-      - '.github/workflows/build-main.yml'
+      - '.github/workflows/dev.yml'
       - 'overlay/**'
       - 'Dockerfile'
       - 'VERSION'
 
 jobs:
-  main:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      -
+        name: Checkout code
+        uses: actions/checkout@v2
+  build:
     runs-on: ubuntu-latest
     steps:
       -
         name: Checkout code
         uses: actions/checkout@v2
       -
-        name: Read version
+        name: Read image version
         uses: bencgreen/read-file-action@v1
         with:
           path: ./VERSION
@@ -45,8 +51,8 @@ jobs:
           push: true
           platforms: linux/amd64,linux/arm/v7,linux/arm64
           tags: |
-            bcgdesign/nginx-webdav:latest
-            bcgdesign/nginx-webdav:${{ steps.version.outputs.content }}
+            bcgdesign/nginx-webdav:dev
+            bcgdesign/nginx-webdav:${{ steps.version.outputs.content }}-beta
       -
         name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
