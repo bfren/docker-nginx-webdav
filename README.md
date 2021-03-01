@@ -31,7 +31,7 @@ By default files are served read-only - change two environment variables to enab
 
 ## License
 
-> MIT
+> [MIT](https://bcg.mit-license.org/2020)
 
 ## Copyright
 
