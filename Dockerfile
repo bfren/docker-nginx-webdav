@@ -1,4 +1,4 @@
-FROM bfren/nginx:alpine3.13-2.2.0-beta
+FROM bfren/nginx:alpine3.13-2.2.0
 
 ENV \
     # set to "r" or "rw" to enable read-only / read-write access
