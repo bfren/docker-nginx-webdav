@@ -1,11 +1,11 @@
 #!/usr/bin/with-contenv sh
 
 set -euo pipefail
-export BCG_E=`basename ${0}`
+export BF_E=`basename ${0}`
 
 
 #======================================================================================================================
 # Add environment variables.
 #======================================================================================================================
 
-bcg-env "WEBDAV_EXT_METHODS" "PROPFIND OPTIONS"
+bf-env "WEBDAV_EXT_METHODS" "PROPFIND OPTIONS"

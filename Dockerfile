@@ -1,10 +1,4 @@
-FROM bcgdesign/nginx:alpine3.13-2.1.4
-
-LABEL maintainer="Ben Green <ben@bcgdesign.com>" \
-    org.label-schema.name="Nginx WebDAV" \
-    org.label-schema.version="latest" \
-    org.label-schema.vendor="Ben Green" \
-    org.label-schema.schema-version="1.0"
+FROM bfren/nginx:alpine3.13-2.2.0
 
 ENV \
     # set to "r" or "rw" to enable read-only / read-write access
@@ -15,4 +9,4 @@ ENV \
 COPY ./overlay /
 COPY ./NGINX_BUILD /tmp/VERSION
 
-RUN bcg-install
+RUN bf-install

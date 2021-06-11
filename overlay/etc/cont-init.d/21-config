@@ -1,14 +1,14 @@
 #!/usr/bin/with-contenv sh
 
 set -euo pipefail
-export BCG_E=`basename ${0}`
+export BF_E=`basename ${0}`
 
 
 #======================================================================================================================
 # Config is re-written every time in case environment variables have been changed.
 #======================================================================================================================
 
-bcg-echo "Writing Nginx WebDAV config..."
+bf-echo "Writing Nginx WebDAV config..."
 esh -o ${NGINX_LOCALHOST_CONF} \
-    ${BCG_TEMPLATES}/localhost.conf.esh
-bcg-done
+    ${BF_TEMPLATES}/localhost.conf.esh
+bf-done
