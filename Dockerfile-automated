@@ -1,4 +1,4 @@
-FROM bcgdesign/nginx:auto
+FROM bfren/nginx:auto
 
 ENV \
     # set to "r" or "rw" to enable read-only / read-write access
