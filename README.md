@@ -1,9 +1,9 @@
 # Docker Nginx WebDAV
 
-![GitHub release (latest by date)](https://img.shields.io/github/v/release/bfren/docker-nginx-webdav) ![Docker Pulls](https://img.shields.io/docker/pulls/bcgdesign/nginx-webdav?label=pulls) ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/bcgdesign/nginx-webdav/latest?label=size)<br/>
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/bfren/docker-nginx-webdav) ![Docker Pulls](https://img.shields.io/docker/pulls/bfren/nginx-webdav?label=pulls) ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/bfren/nginx-webdav/latest?label=size)<br/>
 ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/bfren/docker-nginx-webdav/dev?label=build)
 
-[Docker Repository](https://hub.docker.com/r/bcgdesign/nginx-webdav) - [bfren ecosystem](https://github.com/bfren/docker)
+[Docker Repository](https://hub.docker.com/r/bfren/nginx-webdav) - [bfren ecosystem](https://github.com/bfren/docker)
 
 Very Simple WebDAV server - serves files mounted in `/www`.  There is **no** authentication, so this should be used behind a reverse proxy, and local only, unless you know what you are doing.
 
