@@ -15,4 +15,4 @@ ENV \
 COPY ./overlay /
 COPY ./NGINX_BUILD /tmp/VERSION
 
-RUN bcg-install
+RUN bf-install

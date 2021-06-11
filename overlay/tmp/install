@@ -11,14 +11,14 @@ export BCG_E=`basename ${0}`
 cd /tmp
 
 VERSION=$(cat VERSION)
-bcg-debug "Nginx version ${VERSION}."
+bf-debug "Nginx version ${VERSION}."
 
 
 #======================================================================================================================
 # Install Nginx WebDAV extension and dependencies.
 #======================================================================================================================
 
-bcg-echo "Installing Nginx v${VERSION} WebDAV extension..."
+bf-echo "Installing Nginx v${VERSION} WebDAV extension..."
 apk add --no-cache \
     nginx-mod-http-dav-ext=${VERSION}
-bcg-done
+bf-done

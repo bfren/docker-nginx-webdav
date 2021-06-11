@@ -8,7 +8,7 @@ export BCG_E=`basename ${0}`
 # Config is re-written every time in case environment variables have been changed.
 #======================================================================================================================
 
-bcg-echo "Writing Nginx WebDAV config..."
+bf-echo "Writing Nginx WebDAV config..."
 esh -o ${NGINX_LOCALHOST_CONF} \
     ${BCG_TEMPLATES}/localhost.conf.esh
-bcg-done
+bf-done
