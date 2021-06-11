@@ -38,8 +38,8 @@ jobs:
           push: true
           platforms: linux/amd64,linux/arm/v7,linux/arm64
           tags: |
-            bcgdesign/nginx-webdav:latest
-            bcgdesign/nginx-webdav:${{ steps.version.outputs.content }}
+            bfren/nginx-webdav:latest
+            bfren/nginx-webdav:${{ steps.version.outputs.content }}
       -
         name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
