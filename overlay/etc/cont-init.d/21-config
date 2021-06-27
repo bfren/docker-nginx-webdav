@@ -5,10 +5,12 @@ export BF_E=`basename ${0}`
 
 
 #======================================================================================================================
-# Config is re-written every time in case environment variables have been changed.
+# Generate configuration file.
 #======================================================================================================================
 
-bf-echo "Writing Nginx WebDAV config..."
+bf-echo "Generating Nginx configuration file..."
+
 esh -o ${NGINX_LOCALHOST_CONF} \
     ${BF_TEMPLATES}/localhost.conf.esh
+
 bf-done
