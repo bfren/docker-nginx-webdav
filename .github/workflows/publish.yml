@@ -14,9 +14,9 @@ jobs:
         uses: actions/checkout@v2
       -
         name: Read version
-        uses: bfren/read-file-action@v1
+        uses: bfren/read-file@v1
         with:
-          path: ./VERSION
+          file: ./VERSION
         id: version
       -
         name: Set up QEMU
@@ -39,7 +39,7 @@ jobs:
           platforms: linux/amd64,linux/arm/v7,linux/arm64
           tags: |
             bfren/nginx-webdav:latest
-            bfren/nginx-webdav:${{ steps.version.outputs.content }}
+            bfren/nginx-webdav:${{ steps.version.outputs.contents }}
       -
         name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
