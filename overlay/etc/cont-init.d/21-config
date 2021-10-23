@@ -8,9 +8,6 @@ export BF_E=`basename ${0}`
 # Generate configuration file.
 #======================================================================================================================
 
-bf-echo "Generating Nginx configuration file..."
-
-esh -o ${NGINX_LOCALHOST_CONF} \
-    ${BF_TEMPLATES}/localhost.conf.esh
-
+bf-echo "Generating Nginx configuration file."
+bf-esh ${BF_TEMPLATES}/localhost.conf.esh ${NGINX_LOCALHOST_CONF}
 bf-done
