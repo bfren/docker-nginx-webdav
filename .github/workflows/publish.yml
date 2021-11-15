@@ -13,6 +13,18 @@ jobs:
         name: Checkout code
         uses: actions/checkout@v2
       -
+        name: Read image version
+        uses: bfren/read-file@v1
+        with:
+          file: ./VERSION_MAJOR
+        id: version_major
+      -
+        name: Read image version
+        uses: bfren/read-file@v1
+        with:
+          file: ./VERSION_MINOR
+        id: version_minor
+      -
         name: Read version
         uses: bfren/read-file@v1
         with:
@@ -39,6 +51,8 @@ jobs:
           platforms: linux/amd64,linux/arm/v7,linux/arm64
           tags: |
             bfren/nginx-webdav:latest
+            bfren/nginx-webdav:${{ steps.version_major.outputs.contents }}
+            bfren/nginx-webdav:${{ steps.version_minor.outputs.contents }}
             bfren/nginx-webdav:${{ steps.version.outputs.contents }}
       -
         name: Image digest
