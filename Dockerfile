@@ -1,4 +1,4 @@
-FROM bfren/nginx:nginx1.20-2.2.21
+FROM bfren/nginx:nginx1.20-2.2.23
 
 ENV \
     # set to "r" or "rw" to enable read-only / read-write access
