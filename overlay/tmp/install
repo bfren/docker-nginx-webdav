@@ -10,8 +10,8 @@ export BF_E=`basename ${0}`
 
 cd /tmp
 
-VERSION=$(cat VERSION)
-bf-debug "Nginx version ${VERSION}."
+VERSION=$(cat NGINX_BUILD)
+bf-echo "Nginx version ${VERSION}."
 
 
 #======================================================================================================================
