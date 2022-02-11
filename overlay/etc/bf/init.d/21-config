@@ -1,11 +1,12 @@
-#!/usr/bin/with-contenv sh
+#!/command/with-contenv sh
 
 set -euo pipefail
 export BF_E=`basename ${0}`
 
 
 #======================================================================================================================
-# Add environment variables.
+# Generate configuration file.
 #======================================================================================================================
 
-bf-env "WEBDAV_EXT_METHODS" "PROPFIND OPTIONS"
+bf-echo "Generating Nginx configuration file."
+bf-esh ${BF_TEMPLATES}/localhost.conf.esh ${NGINX_LOCALHOST_CONF}
