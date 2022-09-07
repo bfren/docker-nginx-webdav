@@ -2,7 +2,7 @@ server {
     listen                          80;
     listen                          [::]:80;
 
-    root                            <%= ${NGINX_WWW} %>;
+    root                            <%= ${NGINX_ROOT} %>;
 
     autoindex                       on;
 
