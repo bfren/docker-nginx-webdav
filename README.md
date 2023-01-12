@@ -31,4 +31,4 @@ By default files are served read-only - change two environment variables to enab
 
 ## Copyright
 
-> Copyright (c) 2020-2022 [bfren](https://bfren.dev) (unless otherwise stated)
+> Copyright (c) 2020-2023 [bfren](https://bfren.dev) (unless otherwise stated)
