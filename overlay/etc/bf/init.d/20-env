@@ -8,5 +8,4 @@ export BF_E=`basename ${0}`
 # Add environment variables.
 #======================================================================================================================
 
-bf-env "NGINX_ROOT" "/www"
 bf-env "WEBDAV_EXT_METHODS" "PROPFIND OPTIONS"
