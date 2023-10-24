@@ -1,4 +1,4 @@
-FROM bfren/nginx:nginx1.24-6.0.0-dev
+FROM bfren/nginx:nginx1.24-alpine3.18-6.0.0-dev
 
 LABEL org.opencontainers.image.source="https://github.com/bfren/docker-nginx-webdav"
 
