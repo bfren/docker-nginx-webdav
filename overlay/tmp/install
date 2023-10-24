@@ -1,24 +1,11 @@
-#!/bin/sh
+#!/usr/bin/nu
 
-set -euo pipefail
-export BF_E=`basename ${0}`
+use bf
 
-
-#======================================================================================================================
-# Get Nginx Version.
-#======================================================================================================================
-
-cd /tmp
-
-VERSION=$(cat NGINX_BUILD)
-bf-echo "Nginx version ${VERSION}."
-
-
-#======================================================================================================================
-# Install Nginx WebDAV extension and dependencies.
-#======================================================================================================================
-
-bf-echo "Installing Nginx v${VERSION} WebDAV extension..."
-apk add --no-cache \
-    nginx-mod-http-dav-ext=${VERSION}
-bf-done
+# Setup and install nginx
+def main [] {
+    # get nginx version and install WebDAV module
+    let version = bf fs read /tmp/NGINX_BUILD
+    bf write $"Installing nginx v($version) WebDAV extension."
+    bf pkg install [$"nginx-mod-http-dav-ext=($version)"]
+}

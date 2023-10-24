@@ -2,13 +2,13 @@ server {
     listen                          80;
     listen                          [::]:80;
 
-    root                            <%= ${NGINX_WWW} %>;
+    root                            <% bf-env NGINX_WWW %>;
 
     autoindex                       on;
 
-    dav_access                      all:<%= "${WEBDAV_ACCESS}" %>;
-    dav_methods                     <%= "${WEBDAV_METHODS}" %>;
-    dav_ext_methods                 <%= "${WEBDAV_EXT_METHODS}" %>;
+    dav_access                      all:<% bf-env NGINX_WEBDAV_ACCESS %>;
+    dav_methods                     <% bf-env NGINX_WEBDAV_METHODS %>;
+    dav_ext_methods                 <% bf-env NGINX_WEBDAV_EXT_METHODS %>;
 
     client_body_temp_path           /tmp;
 
