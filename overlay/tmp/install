@@ -8,4 +8,7 @@ def main [] {
     let version = bf fs read /tmp/NGINX_BUILD
     bf write $"Installing nginx v($version) WebDAV extension."
     bf pkg install [$"nginx-mod-http-dav-ext=($version)"]
+
+    # add bf-nginx-webdav module to config
+    bf config use bf-nginx-webdav
 }
