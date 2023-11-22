@@ -1,16 +1,16 @@
-FROM bfren/nginx:nginx1.24-5.0.16
+FROM bfren/nginx:nginx1.24-alpine3.18-6.0.0
 
 LABEL org.opencontainers.image.source="https://github.com/bfren/docker-nginx-webdav"
 
 ARG BF_IMAGE
 ARG BF_VERSION
 
+COPY ./overlay /
+
 ENV \
     # set to "r" or "rw" (without quotes) to enable read-only / read-write access
-    WEBDAV_ACCESS=r \
+    BF_NGINX_WEBDAV_ACCESS=r \
     # set to "PUT DELETE MKCOL COPY MOVE" (or any variation, without quotes) to enable full write access
-    WEBDAV_METHODS=off
-
-COPY ./overlay /
+    BF_NGINX_WEBDAV_METHODS=off
 
 RUN bf-install
