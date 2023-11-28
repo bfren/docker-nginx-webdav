@@ -1,21 +1,40 @@
 server {
+    # listen to port 80 - this is designed to be a local-only image, behind a proxy server
+    # https://nginx.org/en/docs/http/ngx_http_core_module.html#listen
     listen                          80;
     listen                          [::]:80;
 
+    # files root
+    # https://nginx.org/en/docs/http/ngx_http_core_module.html#root
     root                            <% bf-env NGINX_WWW %>;
 
+    # allow index page for accessing files via a browser
+    # https://nginx.org/en/docs/http/ngx_http_autoindex_module.html#autoindex
     autoindex                       on;
 
+    # define temporary file hierarchy
+    # https://nginx.org/en/docs/http/ngx_http_core_module.html#client_body_temp_path
+    client_body_temp_path           /tmp 1 2;
+
+
+    # enable WebDAV extensions
+    # https://nginx.org/en/docs/http/ngx_http_dav_module.html#dav_access
+    # https://nginx.org/en/docs/http/ngx_http_dav_module.html#dav_methods
     dav_access                      all:<% bf-env NGINX_WEBDAV_ACCESS %>;
     dav_methods                     <% bf-env NGINX_WEBDAV_METHODS %>;
     dav_ext_methods                 <% bf-env NGINX_WEBDAV_EXT_METHODS %>;
 
-    client_body_temp_path           /tmp;
-
+    # create intermediate directories when PUTting a new file
+    # https://nginx.org/en/docs/http/ngx_http_dav_module.html#create_full_put_path
     create_full_put_path            on;
 
-    proxy_max_temp_file_size        0;
+    # remove upload limits
+    # https://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_buffering
+    # https://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_max_temp_file_size
     proxy_buffering                 off;
-
+    proxy_max_temp_file_size        0;
     include                         helpers/uploads.conf;
+
+    # include custom configuration file
+    include                         sites/localhost-custom[.].conf;
 }
