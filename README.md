@@ -8,6 +8,8 @@ Very Simple WebDAV server - serves files mounted in `/www`.  There is **no** aut
 
 By default files are served read-only - change two environment variables to enable full write access as well.
 
+If you wish to add custom Nginx configuration, map a file to `/etc/nginx/sites/custom.conf`.  This is included last, so anything you add here will override default values.
+
 ## Contents
 
 * [Ports](#ports)
@@ -20,10 +22,10 @@ By default files are served read-only - change two environment variables to enab
 
 ## Environment Variables
 
-| Variable         | Values      | Description                                                              | Default |
-| ---------------- | ----------- | ------------------------------------------------------------------------ | ------- |
-| `NGINX_WEBDAV_ACCESS`  | 'r' or 'rw' | Set to 'r' for read-only or 'rw' for read/write access (without quotes). | r       |
-| `NGINX_WEBDAV_METHODS` | string      | For full write access set to 'PUT DELETE MKCOL COPY MOVE'.               | off     |
+| Variable                  | Values      | Description                                                              | Default |
+| ------------------------- | ----------- | ------------------------------------------------------------------------ | ------- |
+| `BF_NGINX_WEBDAV_ACCESS`  | 'r' or 'rw' | Set to 'r' for read-only or 'rw' for read/write access (without quotes). | r       |
+| `BF_NGINX_WEBDAV_METHODS` | string      | For full write access set to 'PUT DELETE MKCOL COPY MOVE'.               | off     |
 
 ## Licence
 
