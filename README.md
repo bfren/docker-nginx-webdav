@@ -33,4 +33,4 @@ If you wish to add custom Nginx configuration, map a file to `/etc/nginx/sites/c
 
 ## Copyright
 
-> Copyright (c) 2020-2023 [bfren](https://bfren.dev) (unless otherwise stated)
+> Copyright (c) 2020-2024 [bfren](https://bfren.dev) (unless otherwise stated)
