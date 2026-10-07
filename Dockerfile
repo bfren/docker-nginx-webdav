@@ -1,4 +1,4 @@
-FROM quay.io/bfren/nginx:nginx1.30-alpine3.24-7.2.1
+FROM quay.io/bfren/nginx:nginx1.30-alpine3.24-7.2.2
 
 LABEL org.opencontainers.image.source="https://github.com/bfren/docker-nginx-webdav"
 
