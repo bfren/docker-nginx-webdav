@@ -34,6 +34,7 @@ server {
     proxy_max_temp_file_size        0;
     include                         helpers/uploads.conf;
 
-    # include custom configuration file
-    include                         sites/custom[.].conf;
+    # include custom configuration files - these are inside the server block, so can contain location blocks
+    # (files in sites/ are also included at http level by nginx.conf, so must not be used for server configuration)
+    include                         custom/*.conf;
 }
