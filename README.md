@@ -46,7 +46,7 @@ Open `http://localhost:8080` in a browser, or connect a WebDAV client to the sam
 * 📂 Browse folders in a web browser, or connect with a WebDAV client
 * 🔒 Read-only unless you enable the write methods
 * ⬆️ No upload size limit, and folders are created as needed when uploading
-* 🧩 Add your own nginx configuration to the server block
+* 🧩 Add your own nginx configuration to the server block, in `/etc/nginx/custom`
 * 🗜️ Everything from [Nginx](https://github.com/bfren/docker-nginx#features): compression, logs, daily reload and a health check
 * 🖥️ Built for `linux/amd64`, `linux/arm64` and `linux/arm/v7`
 
@@ -101,7 +101,14 @@ New files and folders are owned by `www`, with permissions set by `BF_NGINX_WEBD
 
 ### Custom configuration
 
-The server block includes `/etc/nginx/sites/custom.conf` if it exists. **Be careful** - nginx also includes every `.conf` file in `/etc/nginx/sites` at the `http` level, so anything in `custom.conf` must be valid in both places. Settings like `client_body_timeout 300s;` are fine; `location` blocks will stop nginx from starting.
+Every `.conf` file in `/etc/nginx/custom` is included inside the server block, so it can contain anything valid there - including `location` blocks. For example, to allow longer uploads:
+
+```nginx
+# /etc/nginx/custom/timeouts.conf
+client_body_timeout             300s;
+```
+
+Earlier versions included `/etc/nginx/sites/custom.conf` instead. If you mounted a file there, move it to `/etc/nginx/custom/` - anything left in `/etc/nginx/sites` is now only included at the `http` level.
 
 ### Health check, logs and reloading
 
@@ -124,7 +131,7 @@ See [Nginx](https://github.com/bfren/docker-nginx#building-on-this-image) for th
 ./test.sh        # builds the image and runs /test
 ```
 
-This image has no tests of its own. `/test` runs the tests inherited from the base images, and fails if tests don't execute.
+`/test` runs this image's tests alongside the base images' tests, and fails if tests don't execute. They check that the `dav-ext` module is installed, and generate the site from its template - read-only and with the write methods enabled - checking the settings and that `nginx -t` accepts it, including with a `location` block in `/etc/nginx/custom`.
 
 ## Troubleshooting
 
@@ -138,7 +145,7 @@ The `www` user (UID 1000) can't write to `/www` - change the ownership or permis
 
 ### The container stops at start-up
 
-nginx's configuration test failed - often because of something in `custom.conf` (see [Custom configuration](#custom-configuration)). Check `docker logs`.
+nginx's configuration test failed - often because of a file in `/etc/nginx/custom`, or a server-level file left in `/etc/nginx/sites` (see [Custom configuration](#custom-configuration)). Check `docker logs`.
 
 ### My file manager connects, but read-only
 
