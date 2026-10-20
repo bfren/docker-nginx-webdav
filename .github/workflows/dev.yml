@@ -27,6 +27,18 @@ jobs:
           file: ./VERSION
         id: version
       -
+        name: Read image version
+        uses: bfren/read-file@v2
+        with:
+          file: ./VERSION_MAJOR
+        id: version_major
+      -
+        name: Read image version
+        uses: bfren/read-file@v2
+        with:
+          file: ./VERSION_MINOR
+        id: version_minor
+      -
         name: Set up QEMU
         uses: docker/setup-qemu-action@v4
       -
@@ -72,8 +84,12 @@ jobs:
           platforms: linux/amd64,linux/arm/v7,linux/arm64
           tags: |
             bfren/nginx-webdav:dev
+            bfren/nginx-webdav:${{ steps.version_major.outputs.contents }}-dev
+            bfren/nginx-webdav:${{ steps.version_minor.outputs.contents }}-dev
             bfren/nginx-webdav:${{ steps.version.outputs.contents }}-dev
             quay.io/bfren/nginx-webdav:dev
+            quay.io/bfren/nginx-webdav:${{ steps.version_major.outputs.contents }}-dev
+            quay.io/bfren/nginx-webdav:${{ steps.version_minor.outputs.contents }}-dev
             quay.io/bfren/nginx-webdav:${{ steps.version.outputs.contents }}-dev
       -
         name: Image digest
