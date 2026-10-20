@@ -30,7 +30,7 @@ Or with Docker Compose, allowing changes:
 ```yaml
 services:
   dav:
-    image: quay.io/bfren/nginx-webdav:7.2
+    image: quay.io/bfren/nginx-webdav:7.3
     environment:
       - BF_NGINX_WEBDAV_METHODS=PUT DELETE MKCOL COPY MOVE
     ports:
@@ -48,18 +48,17 @@ Open `http://localhost:8080` in a browser, or connect a WebDAV client to the sam
 * ⬆️ No upload size limit, and folders are created as needed when uploading
 * 🧩 Add your own nginx configuration to the server block, in `/etc/nginx/custom`
 * 🗜️ Everything from [Nginx](https://github.com/bfren/docker-nginx#features): compression, logs, daily reload and a health check
-* 🖥️ Built for `linux/amd64`, `linux/arm64` and `linux/arm/v7`
 
 ## Tags
 
-Images are published to Docker Hub (`bfren/nginx-webdav`) and Quay.io (`quay.io/bfren/nginx-webdav`). There is one build, on nginx 1.30 and Alpine 3.24.
+Images are published to Docker Hub (`bfren/nginx-webdav`) and Quay.io (`quay.io/bfren/nginx-webdav`) for `linux/amd64`, `linux/arm/v7` and `linux/arm64`. There is one build, on nginx 1.30 and Alpine 3.24.
 
 | Tag       | Example | Use when                                   |
 | --------- | ------- | ------------------------------------------ |
 | `latest`  |         | You always want the newest image           |
 | `MAJOR`   | `7`     | You want updates, but not breaking changes |
-| `MINOR`   | `7.2`   | You want fixes only - **recommended**      |
-| `VERSION` | `7.2.6` | You want to pin this image exactly         |
+| `MINOR`   | `7.3`   | You want fixes only - **recommended**      |
+| `VERSION` | `7.3.0` | You want to pin this image exactly         |
 
 ## Configuration
 
@@ -117,7 +116,7 @@ These come from [Nginx](https://github.com/bfren/docker-nginx#health-check). The
 ## Building on this image
 
 ```dockerfile
-FROM quay.io/bfren/nginx-webdav:7.2
+FROM quay.io/bfren/nginx-webdav:7.3
 
 COPY ./overlay /
 RUN bf-install
