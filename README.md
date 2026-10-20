@@ -128,7 +128,7 @@ See [Nginx](https://github.com/bfren/docker-nginx#building-on-this-image) for th
 ## Testing
 
 ```sh
-./test.sh        # builds the image and runs /test
+./test.nu        # builds the image and runs /test
 ```
 
 `/test` runs this image's tests alongside the base images' tests, and fails if tests don't execute. They check that the `dav-ext` module is installed, and generate the site from its template - read-only and with the write methods enabled - checking the settings and that `nginx -t` accepts it, including with a `location` block in `/etc/nginx/custom`.
