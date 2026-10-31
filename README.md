@@ -1,6 +1,6 @@
 # Nginx + WebDAV
 
-![GitHub release (latest by date)](https://img.shields.io/github/v/release/bfren/docker-nginx-webdav) ![Docker Pulls](https://img.shields.io/endpoint?url=https%3A%2F%2Fbfren.dev%2Fdocker%2Fpulls%2Fnginx-webdav) ![Docker Image Size](https://img.shields.io/endpoint?url=https%3A%2F%2Fbfren.dev%2Fdocker%2Fsize%2Fnginx-webdav) ![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/bfren/docker-nginx-webdav/dev.yml?branch=main)
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/bfren/docker-nginx-webdav) ![Docker Pulls](https://img.shields.io/endpoint?url=https%3A%2F%2Fbfren.dev%2Fdocker%2Fpulls%2Fnginx-webdav) ![Docker Image Size](https://img.shields.io/endpoint?url=https%3A%2F%2Fbfren.dev%2Fdocker%2Fsize%2Fnginx-webdav) ![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/bfren/docker-nginx-webdav/build.yml?branch=main)
 
 [Docker Hub](https://hub.docker.com/r/bfren/nginx-webdav) - [Quay.io](https://quay.io/repository/bfren/nginx-webdav) - [bfren ecosystem](https://github.com/bfren/docker)
 
