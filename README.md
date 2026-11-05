@@ -1,6 +1,6 @@
 # Nginx + WebDAV
 
-![GitHub release (latest by date)](https://img.shields.io/github/v/release/bfren/docker-nginx-webdav) ![Docker Pulls](https://img.shields.io/endpoint?url=https%3A%2F%2Fbfren.dev%2Fdocker%2Fpulls%2Fnginx-webdav) ![Docker Image Size](https://img.shields.io/endpoint?url=https%3A%2F%2Fbfren.dev%2Fdocker%2Fsize%2Fnginx-webdav) ![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/bfren/docker-nginx-webdav/dev.yml?branch=main)
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/bfren/docker-nginx-webdav) ![Docker Pulls](https://img.shields.io/endpoint?url=https%3A%2F%2Fbfren.dev%2Fdocker%2Fpulls%2Fnginx-webdav) ![Docker Image Size](https://img.shields.io/endpoint?url=https%3A%2F%2Fbfren.dev%2Fdocker%2Fsize%2Fnginx-webdav) ![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/bfren/docker-nginx-webdav/build.yml?branch=main)
 
 [Docker Hub](https://hub.docker.com/r/bfren/nginx-webdav) - [Quay.io](https://quay.io/repository/bfren/nginx-webdav) - [bfren ecosystem](https://github.com/bfren/docker)
 
@@ -30,7 +30,7 @@ Or with Docker Compose, allowing changes:
 ```yaml
 services:
   dav:
-    image: quay.io/bfren/nginx-webdav:7.3
+    image: quay.io/bfren/nginx-webdav:8.0
     environment:
       - BF_NGINX_WEBDAV_METHODS=PUT DELETE MKCOL COPY MOVE
     ports:
@@ -56,9 +56,9 @@ Images are published to Docker Hub (`bfren/nginx-webdav`) and Quay.io (`quay.io/
 | Tag       | Example | Use when                                   |
 | --------- | ------- | ------------------------------------------ |
 | `latest`  |         | You always want the newest image           |
-| `MAJOR`   | `7`     | You want updates, but not breaking changes |
-| `MINOR`   | `7.3`   | You want fixes only - **recommended**      |
-| `VERSION` | `7.3.0` | You want to pin this image exactly         |
+| `MAJOR`   | `8`     | You want updates, but not breaking changes |
+| `MINOR`   | `8.0`   | You want fixes only - **recommended**      |
+| `VERSION` | `8.0.0` | You want to pin this image exactly         |
 
 ## Configuration
 
@@ -116,7 +116,7 @@ These come from [Nginx](https://github.com/bfren/docker-nginx#health-check). The
 ## Building on this image
 
 ```dockerfile
-FROM quay.io/bfren/nginx-webdav:7.3
+FROM quay.io/bfren/nginx-webdav:8.0
 
 COPY ./overlay /
 RUN bf-install
