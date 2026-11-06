@@ -58,7 +58,7 @@ Images are published to Docker Hub (`bfren/nginx-webdav`) and Quay.io (`quay.io/
 | `latest`  |         | You always want the newest image           |
 | `MAJOR`   | `8`     | You want updates, but not breaking changes |
 | `MINOR`   | `8.0`   | You want fixes only - **recommended**      |
-| `VERSION` | `8.0.0` | You want to pin this image exactly         |
+| `VERSION` | `8.0.1` | You want to pin this image exactly         |
 
 ## Configuration
 
