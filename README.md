@@ -58,7 +58,7 @@ Images are published to Docker Hub (`bfren/nginx-webdav`) and Quay.io (`quay.io/
 | `latest`  |         | You always want the newest image           |
 | `MAJOR`   | `8`     | You want updates, but not breaking changes |
 | `MINOR`   | `8.0`   | You want fixes only - **recommended**      |
-| `VERSION` | `8.0.2` | You want to pin this image exactly         |
+| `VERSION` | `8.0.3` | You want to pin this image exactly         |
 
 ## Configuration
 
@@ -117,6 +117,10 @@ These come from [Nginx](https://github.com/bfren/docker-nginx#health-check). The
 
 ```dockerfile
 FROM quay.io/bfren/nginx-webdav:8.0
+
+# required by bf-install, which saves them as the image name and version
+ARG BF_IMAGE=my-image
+ARG BF_VERSION=1.0.0
 
 COPY ./overlay /
 RUN bf-install
