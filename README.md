@@ -62,6 +62,8 @@ Images are published to Docker Hub (`bfren/nginx-webdav`) and Quay.io (`quay.io/
 | `MINOR`   | `8.0`   | You want fixes only - **recommended**      |
 | `VERSION` | `8.0.3` | You want to pin this image exactly         |
 
+A new `MAJOR` version means a breaking change. Before moving to one, read the [changelog](CHANGELOG.md), where each breaking change is marked **Breaking**.
+
 ## Configuration
 
 ### Ports
