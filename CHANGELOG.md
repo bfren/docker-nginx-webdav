@@ -11,10 +11,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - `docker-compose.yml` - the Quickstart example as a file you can copy.
 
+### Changed
+
+- Base image updated to `bfren/nginx` 9.0.3, which updates nginx to 1.30.7 - see the
+  [Nginx changelog](https://github.com/bfren/docker-nginx/blob/main/CHANGELOG.md).
+
 ### Fixed
 
 - README: the "Building on this image" Dockerfile was missing the `BF_IMAGE` and `BF_VERSION` build arguments,
   so `bf-install` failed when you followed it.
+- The image builds again - it installed Alpine's `nginx-mod-http-dav-ext` package `1.30.6-r0`, which Alpine replaced
+  with `1.30.7-r0`.
 
 ## [8.0.2] - 2026-11-10
 
