@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [8.0.3] - Unreleased
 
+### Added
+
+- `docker-compose.yml` - the Quickstart example as a file you can copy.
+
 ### Fixed
 
 - README: the "Building on this image" Dockerfile was missing the `BF_IMAGE` and `BF_VERSION` build arguments,

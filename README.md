@@ -39,6 +39,8 @@ services:
       - ./files:/www
 ```
 
+This example is also in [`docker-compose.yml`](docker-compose.yml).
+
 Open `http://localhost:8080` in a browser, or connect a WebDAV client to the same address.
 
 ## Features
