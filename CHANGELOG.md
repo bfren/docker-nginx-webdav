@@ -5,7 +5,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [8.0.3] - Unreleased
+## [8.0.3] - 2026-11-25
 
 ### Added
 
@@ -13,8 +13,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- Base image updated to `bfren/nginx` 9.0.3, which updates nginx to 1.30.7 - see the
-  [Nginx changelog](https://github.com/bfren/docker-nginx/blob/main/CHANGELOG.md).
+- Base image updated to `bfren/nginx` 9.0.4, which updates nginx to 1.30.7 and moves to `bfren/alpine-s6` 7.0.3 - see
+  the [Nginx changelog](https://github.com/bfren/docker-nginx/blob/main/CHANGELOG.md).
 
 ### Fixed
 
