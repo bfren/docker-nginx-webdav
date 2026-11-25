@@ -5,6 +5,24 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [8.0.3] - 2026-11-25
+
+### Added
+
+- `docker-compose.yml` - the Quickstart example as a file you can copy.
+
+### Changed
+
+- Base image updated to `bfren/nginx` 9.0.4, which updates nginx to 1.30.7 and moves to `bfren/alpine-s6` 7.0.3 - see
+  the [Nginx changelog](https://github.com/bfren/docker-nginx/blob/main/CHANGELOG.md).
+
+### Fixed
+
+- README: the "Building on this image" Dockerfile was missing the `BF_IMAGE` and `BF_VERSION` build arguments,
+  so `bf-install` failed when you followed it.
+- The image builds again - it installed Alpine's `nginx-mod-http-dav-ext` package `1.30.6-r0`, which Alpine replaced
+  with `1.30.7-r0`.
+
 ## [8.0.2] - 2026-11-10
 
 ### Changed
@@ -31,6 +49,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Images are built and published by the shared `bfren/docker` build workflow (`build.yml`), replacing the separate
   `dev.yml` and `publish.yml` workflows.
 
+[8.0.3]: https://github.com/bfren/docker-nginx-webdav/compare/v8.0.2...v8.0.3
 [8.0.2]: https://github.com/bfren/docker-nginx-webdav/compare/v8.0.1...v8.0.2
 [8.0.1]: https://github.com/bfren/docker-nginx-webdav/compare/v8.0.0...v8.0.1
 [8.0.0]: https://github.com/bfren/docker-nginx-webdav/compare/v7.3.4...v8.0.0

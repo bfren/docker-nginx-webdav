@@ -1,0 +1,9 @@
+services:
+  dav:
+    image: quay.io/bfren/nginx-webdav:8.0
+    environment:
+      - BF_NGINX_WEBDAV_METHODS=PUT DELETE MKCOL COPY MOVE
+    ports:
+      - "8080:80"
+    volumes:
+      - ./files:/www

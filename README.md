@@ -39,6 +39,8 @@ services:
       - ./files:/www
 ```
 
+This example is also in [`docker-compose.yml`](docker-compose.yml).
+
 Open `http://localhost:8080` in a browser, or connect a WebDAV client to the same address.
 
 ## Features
@@ -58,7 +60,9 @@ Images are published to Docker Hub (`bfren/nginx-webdav`) and Quay.io (`quay.io/
 | `latest`  |         | You always want the newest image           |
 | `MAJOR`   | `8`     | You want updates, but not breaking changes |
 | `MINOR`   | `8.0`   | You want fixes only - **recommended**      |
-| `VERSION` | `8.0.2` | You want to pin this image exactly         |
+| `VERSION` | `8.0.3` | You want to pin this image exactly         |
+
+A new `MAJOR` version means a breaking change. Before moving to one, read the [changelog](CHANGELOG.md), where each breaking change is marked **Breaking**.
 
 ## Configuration
 
@@ -117,6 +121,10 @@ These come from [Nginx](https://github.com/bfren/docker-nginx#health-check). The
 
 ```dockerfile
 FROM quay.io/bfren/nginx-webdav:8.0
+
+# required by bf-install, which saves them as the image name and version
+ARG BF_IMAGE=my-image
+ARG BF_VERSION=1.0.0
 
 COPY ./overlay /
 RUN bf-install
